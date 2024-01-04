@@ -11,9 +11,7 @@ export default class HolbertonCourse {
   }
   // set name of a course
   set name(valu) {
-    if (typeof valu !== 'string') {
-      throw new TypeError('Name must be a string');
-    }
+    if (typeof valu !== 'string') { throw new TypeError('Name must be a string'); }
     this._name = valu;
   }
   // get length of a course
