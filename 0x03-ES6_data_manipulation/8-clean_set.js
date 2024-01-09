@@ -1,17 +1,13 @@
-function cleanSet(xSet, xStartString) {
-  if (!xSet || !xStartString || !(xSet instanceof Set) || typeof xStartString !== 'string') {
+function cleanSet(inputSet, startString = '') {
+  if (!(inputSet instanceof Set) || typeof startString !== 'string') {
     return '';
   }
 
-  let result = '';
-  xSet.forEach((value) => {
-    if (value.startsWith(xStartString)) {
-      const cleanedValue = value.slice(xStartString.length);
-      result += (result.length === 0 ? '' : '-') + cleanedValue;
-    }
-  });
+  const cleanedValues = Array.from(inputSet)
+    .filter((value) => value && value.startsWith(startString))
+    .map((value) => value.slice(startString.length));
 
-  return result;
+  return cleanedValues.join('-');
 }
 
 export default cleanSet;
