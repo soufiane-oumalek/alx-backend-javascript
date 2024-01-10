@@ -1,5 +1,5 @@
-function cleanSet(inputSet, startString = '') {
-  if (!(inputSet instanceof Set) || typeof startString !== 'string') {
+function cleanSet(inputSet, startString) {
+  if (!startString || typeof startString !== 'string') {
     return '';
   }
 
