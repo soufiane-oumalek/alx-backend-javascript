@@ -1,19 +1,15 @@
-function updateUniqueItems(inputMap) {
-  if (!(inputMap instanceof Map)) {
+function updateUniqueItems(map) {
+  if (!(map instanceof Map)) {
     throw new Error('Cannot process');
   }
 
-  const updatedMap = new Map();
-
-  for (const [key, value] of inputMap.entries()) {
+  map.forEach((value, key, originalMap) => {
     if (value === 1) {
-      updatedMap.set(key, 100);
-    } else {
-      updatedMap.set(key, value);
+      originalMap.set(key, 100);
     }
-  }
+  });
 
-  return updatedMap;
+  return map;
 }
 
 export default updateUniqueItems;
