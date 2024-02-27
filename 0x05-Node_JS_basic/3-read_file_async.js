@@ -26,7 +26,7 @@ function countStudents(path) {
           subjects[key].length
         }. List: ${subjects[key].join(', ')}`;
         console.log(msg);
-        messages.push(msg);
+        msgs.push(msg);
       }
       result(msgs);
     });
