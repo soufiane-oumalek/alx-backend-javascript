@@ -21,10 +21,10 @@ function countStudents(path) {
         }
       }
       delete subjects.subject;
-      for (const key of Object.keys(subjects)) {
-        msg = `Number of students in ${key}: ${
-          subjects[key].length
-        }. List: ${subjects[key].join(', ')}`;
+      for (const k of Object.keys(subjects)) {
+        msg = `Number of students in ${k}: ${
+          subjects[k].length
+        }. List: ${subjects[k].join(', ')}`;
         console.log(msg);
         msgs.push(msg);
       }
